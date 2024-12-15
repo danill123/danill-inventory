@@ -25,3 +25,7 @@ Route::apiResource('api/suppliers', SupplierController::class);
 Route::get('/', function () {
     return view('products');
 });
+
+Route::get('/categories', function () {
+    return view('categories');
+});
