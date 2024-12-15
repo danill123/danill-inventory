@@ -13,7 +13,7 @@ class ProductController extends Controller
     {
         // return response()->json(Product::with(['category', 'supplier'])->get(), 200);
          // Eager load 'category' and 'supplier' relationships
-         $products = Product::with(['category', 'supplier'])->get();
+         $products = Product::with(['category', 'supplier'])->orderBy('id', 'desc')->get();
 
          // Return the transformed products data
          return ProductResource::collection($products);
@@ -35,7 +35,7 @@ class ProductController extends Controller
 
         $product = Product::create($validated);
 
-        return response()->json(ProductResource::collection($product), 201);
+        return response()->json($product, 201);
     }
 
     // Show a single product
