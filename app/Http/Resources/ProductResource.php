@@ -18,8 +18,8 @@ class ProductResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'sku' => $this->sku,
-            'category_name' => $this->category->name, // Get category name
-            'supplier_name' => $this->supplier->name, // Get supplier name
+            'category_name' => $this->category ? $this->category->name : 'No Category', // Handle null category
+            'supplier_name' => $this->supplier ? $this->supplier->name : 'No Supplier', // Handle null supplier
             'quantity' => $this->quantity,
             'price' => $this->price,
             'cost' => $this->cost,

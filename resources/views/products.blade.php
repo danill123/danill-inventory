@@ -216,7 +216,7 @@
       // Initialize DataTable
       var table = $('#products-table').DataTable({
           processing: true,
-          serverSide: true,
+          serverSide: false,
           ajax: {
               url: '/api/products', // Backend API route to fetch data
               dataSrc: 'data'  // Ensure the data is accessed from the 'data' key

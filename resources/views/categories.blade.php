@@ -1,16 +1,12 @@
 @extends('template')
 @section('content')
 
-<!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- DataTable CSS -->
 <link href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css" rel="stylesheet">
 
 <div class="container my-4">
     <button class="btn btn-warning btn-sm mb-3" onclick="showAddCategoryForm()">Add Category</button>
 
-    <!-- Table to display categories -->
     <table id="categories-table" class="table table-striped">
         <thead>
             <tr>
@@ -22,7 +18,6 @@
         <tbody></tbody>
     </table>
 
-    <!-- Add Category Modal -->
     <div class="modal fade" id="categoryAddModal" tabindex="-1" aria-labelledby="categoryAddModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -47,7 +42,6 @@
         </div>
     </div>
 
-    <!-- Edit Category Modal -->
     <div class="modal fade" id="categoryEditModal" tabindex="-1" aria-labelledby="categoryEditModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -73,7 +67,6 @@
         </div>
     </div>
 
-    <!-- Delete Confirmation Modal -->
     <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -108,7 +101,7 @@
         // Initialize DataTable
         var table = $('#categories-table').DataTable({
             processing: true,
-            serverSide: true,
+            serverSide: false,
             ajax: {
                 url: '/api/categories',
                 dataSrc: '' // API returns raw array

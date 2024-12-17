@@ -6,11 +6,6 @@ use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\SupplierController;
 
 // use App\Http\Controllers\Inventory;
-
-Route::apiResource('api/products', ProductController::class);
-Route::apiResource('api/categories', CategoryController::class);
-Route::apiResource('api/suppliers', SupplierController::class);
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,10 +17,19 @@ Route::apiResource('api/suppliers', SupplierController::class);
 |
 */
 
+Route::apiResource('api/products', ProductController::class);
+Route::apiResource('api/categories', CategoryController::class);
+Route::apiResource('api/suppliers', SupplierController::class);
+
+
 Route::get('/', function () {
     return view('products');
 });
 
-Route::get('/categories', function () {
+Route::get('/categories', function() {
     return view('categories');
+});
+
+Route::get('/supplier', function() {
+    return view('supplier');
 });
