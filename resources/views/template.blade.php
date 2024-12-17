@@ -9,10 +9,74 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <title>Hello, world!</title>
+    <style>
+      /* Sidebar Styling */
+      .sidebar {
+          height: 100vh; /* Full viewport height */
+          color: white;
+          padding: 15px;
+          /* position: fixed;  Keep sidebar fixed */
+          /* top: 0;
+          left: 0; */
+          width: 250px; /* Fixed width */
+      }
+
+      .sidebar a {
+          color: black;
+          text-decoration: none;
+          display: block;
+          padding: 10px;
+          border-radius: 5px;
+      }
+
+      .sidebar a:hover {
+          background-color: #495057;
+          color: white;
+      }
+
+      .sidebar .nav-item .active {
+          background-color: #495057;
+          color: white;
+      }
+
+      /* Content Area */
+      .content {
+      }
+  </style>
   </head>
   <body>
     {{-- <h1>Hello, world!</h1> --}}
-    @yield('content')
+    {{-- <div class="container-fluid">
+    </div> --}}
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-lg-2 sidebar">
+            <h4 class="text-center" style="color: black;">Inventory</h4>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a href="{{ url('/products') }}" class="nav-link {{ Request::is('products') ? 'active' : '' }}">
+                    Products
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ url('/categories') }}" class="nav-link {{ Request::is('categories') ? 'active' : '' }}">
+                      Category
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ url('/supplier') }}" class="nav-link {{ Request::is('supplier') ? 'active' : '' }}">
+                    Supplier
+                  </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Content Area -->
+        <div class="col-lg-8 content mt-3">
+          @yield('content')
+        </div>
+    </div>
+
 
     <!-- Optional JavaScript; choose one of the two! -->
 
