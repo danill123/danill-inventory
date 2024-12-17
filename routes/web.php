@@ -39,7 +39,7 @@ Route::get('/', [LoginController::class, 'login'])->name('login');
 // Route::get('/home', [MahasiswaController::class, 'index'])->name('home')->middleware('auth');
 Route::post('/actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');
 
-Route::post('/actionlogout', [LoginController::class, 'actionlogout'])->name('actionlogout')->middleware('auth');
+Route::post('/actionlogout', [LoginController::class, 'actionlogout'])->name('actionlogout');
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/products', function () {

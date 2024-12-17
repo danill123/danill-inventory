@@ -375,9 +375,11 @@
             data: formData,
             success: function(response) {
                 alert('Product updated successfully!');
+                // $('#products-table').DataTable().ajax.reload();
+                // table.ajax.reload();
+                location.reload()
                 $('#productUpdateModal').modal('hide');
                 // Refresh the DataTable (or reload the page)
-                $('#products-table').DataTable().ajax.reload();
             },
             error: function(err) {
                 console.log(err);
@@ -430,9 +432,11 @@
             data: formData,
             success: function(response) {
                 alert('Product added successfully!');
+                // $('#products-table').DataTable().ajax.reload();
+                // table.ajax.reload();
                 $('#productAddModal').modal('hide');
+                location.reload()
                 // Refresh the DataTable (or reload the page)
-                $('#products-table').DataTable().ajax.reload();
             },
             error: function(err) {
                 console.log(err);
@@ -460,11 +464,13 @@
                     $('#confirmDeleteModal').modal('hide');
 
                     // Manually remove the modal backdrop (this is important for Bootstrap modal backdrop issue)
+                    // $('#products-table').DataTable().ajax.reload();
+                    // table.ajax.reload();
                     $('body').removeClass('modal-open');
                     $('.modal-backdrop').remove();
+                    location.reload()
 
                     // Reload the DataTable to reflect the changes
-                    $('#products-table').DataTable().ajax.reload();
                     alert('Product deleted successfully!');
                 },
                 error: function(err) {
@@ -492,8 +498,6 @@
             _token: "{{ csrf_token() }}"
         };
 
-        console.log("dsadsadasa", formData)
-
         $.ajax({
             url: "{{ route('stocks.store') }}", // Route to store data
             method: "POST",
@@ -503,9 +507,9 @@
                 $('#createStockModal').modal('hide');
 
                 // Manually remove the modal backdrop (this is important for Bootstrap modal backdrop issue)
+                $('#products-table').DataTable().ajax.reload();
                 $('body').removeClass('modal-open');
                 $('.modal-backdrop').remove();
-                $('#products-table').DataTable().ajax.reload();
             },
             error: function(xhr) {
                 console.log('Error occurred');
