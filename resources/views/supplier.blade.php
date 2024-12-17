@@ -6,6 +6,9 @@
 
 <div class="container my-4">
     <button class="btn btn-primary btn-sm mb-3" onclick="showAddSupplierForm()">Add Supplier</button>
+    <a href="{{ url('/supplier_pdf') }}" class="btn btn-primary btn-sm mb-3">
+        Supplier PDF
+    </a>
 
     <table id="suppliers-table" class="table table-striped">
         <thead>

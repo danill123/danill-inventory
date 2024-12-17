@@ -13,6 +13,9 @@
 </head>
 <body style="padding: 10px;">
     <h1 style="text-align: center">List Products</h1>
+
+    
+    <div style="display: flex; justify-content: center;">
     <table>
     <thead style="margin-top: 10px;" border="1">
         <tr>
@@ -35,5 +38,6 @@
         @endforeach
     </tbody>
     </table>
+    </div>
 </body>
 </html>

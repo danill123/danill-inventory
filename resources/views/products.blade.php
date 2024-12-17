@@ -287,6 +287,9 @@
                           <button class="btn btn-danger btn-sm delete-btn" data-id="${row.id}" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">
                               Delete
                           </button>
+                          <a href="{{ url('/transaction_pdf/${row?.id}/${row?.name}') }}" class="btn btn-danger btn-sm mt-2 delete-btn">
+                              Report Transaction
+                          </a>
                       `;
                   }
               }

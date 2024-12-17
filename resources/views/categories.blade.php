@@ -4,8 +4,11 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css" rel="stylesheet">
 
-<div class="container my-4">
+{{-- <div class="container my-4"> --}}
     <button class="btn btn-warning btn-sm mb-3" onclick="showAddCategoryForm()">Add Category</button>
+    <a href="{{ url('/categories_pdf') }}" class="btn btn-primary btn-sm mb-3">
+        Category PDF
+    </a>
 
     <table id="categories-table" class="table table-striped">
         <thead>
@@ -84,7 +87,7 @@
             </div>
         </div>
     </div>
-</div>
+{{-- </div> --}}
 
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

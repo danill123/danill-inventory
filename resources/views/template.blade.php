@@ -52,6 +52,13 @@
         <!-- Sidebar -->
         <div class="col-lg-2 sidebar">
             <h4 class="text-center" style="color: black;">Inventory</h4>
+            <div class="d-flex justify-content-center my-3">
+              <form action="{{ route('actionlogout') }}" method="POST" style="margin-bottom: 10px;">
+                @csrf
+                {{-- @method('POST') --}}
+                <button type="submit" class="btn btn-danger">Logout</button>
+              </form>
+            </div>
             <ul class="nav flex-column">
                 <li class="nav-item">
                   <a href="{{ url('/products') }}" class="nav-link {{ Request::is('products') ? 'active' : '' }}">
